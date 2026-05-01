@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vicente Hernández | Portafolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS Animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #111827);
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+    .gold {
+      color: #facc15;
+    }
+
+    .glow {
+      box-shadow: 0 0 15px rgba(250,204,21,0.4);
+    }
+
+    .card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(168,85,247,0.4);
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<!-- HERO -->
+<section class="h-screen flex flex-col justify-center items-center text-center px-6">
+  <h1 class="text-4xl md:text-6xl font-bold gold mb-4" data-aos="fade-up">
+    Vicente Mateo Hernández Pérez
+  </h1>
+
+  <h2 class="text-xl md:text-2xl mb-6" data-aos="fade-up" data-aos-delay="200">
+    <span id="typed"></span>
+  </h2>
+
+  <div class="flex gap-4" data-aos="fade-up" data-aos-delay="400">
+    <a href="#proyectos" class="px-6 py-3 bg-yellow-400 text-black rounded-full font-semibold hover:scale-105 transition glow">
+      Ver Proyectos
+    </a>
+    <a href="#" class="px-6 py-3 border border-yellow-400 rounded-full hover:bg-yellow-400 hover:text-black transition">
+      Descargar CV
+    </a>
+  </div>
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="py-20 px-6 max-w-4xl mx-auto text-center" id="sobre">
+  <h2 class="text-3xl font-bold gold mb-6" data-aos="fade-up">Sobre Mí</h2>
+  <p data-aos="fade-up" data-aos-delay="200">
+    Comencé en la programación a los 14 años, impulsado por la curiosidad y el deseo de crear.
+    Actualmente estudio Ingeniería en Informática con distinción máxima, desarrollando soluciones
+    eficientes y escalables. Me caracterizo por una mentalidad de crecimiento constante, adaptabilidad
+    y pasión por la tecnología.
+  </p>
+</section>
+
+<!-- HABILIDADES -->
+<section class="py-20 px-6 bg-black/40">
+  <h2 class="text-3xl font-bold gold text-center mb-10" data-aos="fade-up">Habilidades</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="card p-6" data-aos="fade-up">
+      <h3 class="font-bold mb-2">Lenguajes</h3>
+      <p>Python, JavaScript, HTML, CSS</p>
+    </div>
+
+    <div class="card p-6" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="font-bold mb-2">Herramientas</h3>
+      <p>Git, GitHub, VS Code</p>
+    </div>
+
+    <div class="card p-6" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="font-bold mb-2">Sistemas</h3>
+      <p>Linux, SSH, Máquinas Virtuales</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section class="py-20 px-6" id="proyectos">
+  <h2 class="text-3xl font-bold gold text-center mb-10" data-aos="fade-up">Proyectos</h2>
+
+  <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+    
+    <div class="card p-6" data-aos="zoom-in">
+      <h3 class="font-bold text-lg mb-2">Proyecto 1</h3>
+      <p class="text-sm mb-4">Descripción breve del proyecto.</p>
+      <div class="flex gap-2">
+        <a href="#" class="text-yellow-400">GitHub</a>
+        <a href="#" class="text-purple-400">Demo</a>
+      </div>
+    </div>
+
+    <div class="card p-6" data-aos="zoom-in" data-aos-delay="100">
+      <h3 class="font-bold text-lg mb-2">Proyecto 2</h3>
+      <p class="text-sm mb-4">Descripción breve del proyecto.</p>
+      <div class="flex gap-2">
+        <a href="#" class="text-yellow-400">GitHub</a>
+        <a href="#" class="text-purple-400">Demo</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section class="py-20 px-6 bg-black/40">
+  <h2 class="text-3xl font-bold gold text-center mb-10">Experiencia y Logros</h2>
+  <ul class="max-w-3xl mx-auto space-y-4 text-center">
+    <li>🏆 Distinción máxima en Ingeniería en Informática</li>
+    <li>👨‍💼 Presidente de curso (liderazgo)</li>
+    <li>💻 Desarrollo autodidacta desde los 14 años</li>
+  </ul>
+</section>
+
+<!-- INTERESES -->
+<section class="py-20 text-center">
+  <h2 class="text-3xl font-bold gold mb-6">Intereses</h2>
+  <p>⚽ Fútbol | 💻 Tecnología | 🎮 Cultura Geek</p>
+</section>
+
+<!-- CONTACTO -->
+<section class="py-20 px-6 bg-black/40 text-center">
+  <h2 class="text-3xl font-bold gold mb-6">Contacto</h2>
+
+  <form class="max-w-md mx-auto space-y-4">
+    <input type="text" placeholder="Nombre" class="w-full p-3 rounded bg-black border border-gray-700">
+    <input type="email" placeholder="Email" class="w-full p-3 rounded bg-black border border-gray-700">
+    <textarea placeholder="Mensaje" class="w-full p-3 rounded bg-black border border-gray-700"></textarea>
+    <button class="px-6 py-3 bg-yellow-400 text-black rounded font-semibold hover:scale-105 transition">
+      Enviar
+    </button>
+  </form>
+
+  <div class="mt-6">
+    <a href="#" class="text-yellow-400 text-xl"><i class="fab fa-github"></i></a>
+  </div>
+</section>
+
+<!-- SCRIPTS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  new Typed("#typed", {
+    strings: [
+      "Construyendo soluciones.",
+      "Aprendiendo sin límites.",
+      "Transformando ideas en código."
+    ],
+    typeSpeed: 50,
+    backSpeed: 25,
+    loop: true
+  });
+
+  particlesJS("particles-js", {
+    particles: {
+      number: { value: 60 },
+      size: { value: 3 },
+      color: { value: "#facc15" },
+      line_linked: { enable: true, color: "#a855f7" }
+    }
+  });
+</script>
+
+</body>
+</html>
