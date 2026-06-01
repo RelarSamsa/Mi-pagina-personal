@@ -1,0 +1,1009 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="ILUMINA+ Smart Light - Sistema de iluminación inteligente para ciudades seguras, eficientes y automatizadas."
+  />
+  <meta
+    name="keywords"
+    content="iluminación inteligente, smart city, luminarias inteligentes, seguridad urbana, ahorro energético"
+  />
+  <meta name="author" content="ILUMINA+ Smart Light" />
+
+  <title>ILUMINA+ Smart Light</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root{
+      --primary:#07152d;
+      --secondary:#0d2447;
+      --lime:#b4ff39;
+      --white:#ffffff;
+      --gray:#dfe7f1;
+      --text:#bfc9d8;
+      --glass:rgba(255,255,255,0.06);
+      --border:rgba(255,255,255,0.1);
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Poppins',sans-serif;
+      background:var(--primary);
+      color:var(--white);
+      overflow-x:hidden;
+    }
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      font-size:2.5rem;
+      font-weight:700;
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    .section-subtitle{
+      color:var(--text);
+      text-align:center;
+      max-width:750px;
+      margin:0 auto 60px;
+      line-height:1.8;
+    }
+
+    /* NAVBAR */
+
+    header{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      z-index:1000;
+      background:rgba(7,21,45,0.9);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+    }
+
+    .navbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:20px 8%;
+    }
+
+    .logo{
+      font-size:1.7rem;
+      font-weight:800;
+      color:var(--white);
+    }
+
+    .logo span{
+      color:var(--lime);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+    }
+
+    .nav-links a{
+      color:var(--white);
+      text-decoration:none;
+      font-size:0.95rem;
+      transition:.3s;
+      position:relative;
+    }
+
+    .nav-links a:hover{
+      color:var(--lime);
+    }
+
+    .nav-links a::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:-6px;
+      width:0;
+      height:2px;
+      background:var(--lime);
+      transition:.3s;
+    }
+
+    .nav-links a:hover::after{
+      width:100%;
+    }
+
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      align-items:center;
+      gap:60px;
+      background:
+      radial-gradient(circle at top right, rgba(180,255,57,0.18), transparent 30%),
+      linear-gradient(to right, #07152d, #0a1f3d);
+    }
+
+    .hero-content h1{
+      font-size:4rem;
+      line-height:1.1;
+      margin-bottom:25px;
+    }
+
+    .hero-content h1 span{
+      color:var(--lime);
+    }
+
+    .hero-content p{
+      color:var(--text);
+      line-height:1.9;
+      margin-bottom:35px;
+      max-width:620px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 28px;
+      border-radius:50px;
+      border:none;
+      cursor:pointer;
+      font-weight:600;
+      transition:.4s;
+      text-decoration:none;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:var(--lime);
+      color:#000;
+      box-shadow:0 0 20px rgba(180,255,57,.35);
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 35px rgba(180,255,57,.55);
+    }
+
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,.2);
+      background:transparent;
+      color:var(--white);
+    }
+
+    .btn-secondary:hover{
+      background:rgba(255,255,255,.08);
+      transform:translateY(-4px);
+    }
+
+    .hero-image{
+      position:relative;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .hero-image img{
+      width:100%;
+      max-width:520px;
+      animation:float 5s ease-in-out infinite;
+      filter:drop-shadow(0 0 40px rgba(180,255,57,.2));
+    }
+
+    @keyframes float{
+      0%{transform:translateY(0);}
+      50%{transform:translateY(-15px);}
+      100%{transform:translateY(0);}
+    }
+
+    /* STATS */
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:25px;
+      margin-top:-70px;
+      position:relative;
+      z-index:20;
+    }
+
+    .stat-card{
+      background:var(--glass);
+      border:1px solid var(--border);
+      padding:35px;
+      border-radius:24px;
+      backdrop-filter:blur(10px);
+      text-align:center;
+      transition:.4s;
+      box-shadow:var(--shadow);
+    }
+
+    .stat-card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(180,255,57,.35);
+    }
+
+    .stat-card h2{
+      color:var(--lime);
+      font-size:2.3rem;
+      margin-bottom:10px;
+    }
+
+    .stat-card p{
+      color:var(--text);
+    }
+
+    /* CARDS */
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .card{
+      background:var(--glass);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:35px;
+      transition:.4s;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .card::before{
+      content:'';
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:rgba(180,255,57,.06);
+      border-radius:50%;
+      top:-120px;
+      right:-100px;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:rgba(180,255,57,.3);
+      box-shadow:0 0 35px rgba(0,0,0,.25);
+    }
+
+    .card i{
+      font-size:2rem;
+      color:var(--lime);
+      margin-bottom:20px;
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      font-size:1.2rem;
+    }
+
+    .card p{
+      color:var(--text);
+      line-height:1.8;
+    }
+
+    /* PROCESS */
+
+    .process{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .process-step{
+      background:var(--glass);
+      border:1px solid var(--border);
+      padding:30px;
+      border-radius:20px;
+      text-align:center;
+      position:relative;
+      transition:.4s;
+    }
+
+    .process-step:hover{
+      transform:translateY(-8px);
+    }
+
+    .process-step span{
+      width:55px;
+      height:55px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:50%;
+      background:var(--lime);
+      color:#000;
+      font-weight:700;
+      margin:0 auto 20px;
+    }
+
+    /* TESTIMONIOS */
+
+    .testimonial-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:25px;
+    }
+
+    .testimonial{
+      background:var(--glass);
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:35px;
+    }
+
+    .testimonial p{
+      color:var(--text);
+      line-height:1.9;
+      margin-bottom:20px;
+    }
+
+    .testimonial h4{
+      color:var(--lime);
+    }
+
+    /* CONTACT */
+
+    .contact-wrapper{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .contact-info h2{
+      font-size:2.5rem;
+      margin-bottom:20px;
+    }
+
+    .contact-info p{
+      color:var(--text);
+      line-height:1.8;
+      margin-bottom:30px;
+    }
+
+    form{
+      background:var(--glass);
+      border:1px solid var(--border);
+      padding:40px;
+      border-radius:24px;
+      backdrop-filter:blur(12px);
+    }
+
+    .input-group{
+      margin-bottom:20px;
+    }
+
+    input,
+    textarea{
+      width:100%;
+      padding:16px;
+      border:none;
+      border-radius:14px;
+      background:rgba(255,255,255,.06);
+      color:var(--white);
+      outline:none;
+      border:1px solid transparent;
+      transition:.3s;
+      font-family:'Poppins',sans-serif;
+    }
+
+    input:focus,
+    textarea:focus{
+      border-color:var(--lime);
+    }
+
+    textarea{
+      min-height:140px;
+      resize:none;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#051122;
+      padding:40px 8%;
+      border-top:1px solid rgba(255,255,255,.05);
+    }
+
+    .footer-content{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .socials{
+      display:flex;
+      gap:18px;
+    }
+
+    .socials a{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.05);
+      color:var(--white);
+      transition:.3s;
+      text-decoration:none;
+    }
+
+    .socials a:hover{
+      background:var(--lime);
+      color:#000;
+      transform:translateY(-4px);
+    }
+
+    /* ANIMATION */
+
+    .fade-up{
+      opacity:0;
+      transform:translateY(40px);
+      transition:all .9s ease;
+    }
+
+    .fade-up.active{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:992px){
+
+      .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        padding-top:140px;
+      }
+
+      .hero-content p{
+        margin:auto auto 35px;
+      }
+
+      .hero-buttons{
+        justify-content:center;
+      }
+
+      .stats{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      .contact-wrapper{
+        grid-template-columns:1fr;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .hero-content h1{
+        font-size:2.8rem;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+      .stats{
+        grid-template-columns:1fr;
+      }
+
+      section{
+        padding:80px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">ILUMINA<span>+</span></div>
+
+      <div class="nav-links">
+        <a href="#problemas">Problemas</a>
+        <a href="#funciona">Cómo Funciona</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#testimonios">Testimonios</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="hero-content fade-up">
+      <h1>
+        Iluminación Inteligente para
+        <span>Ciudades Más Seguras y Eficientes</span>
+      </h1>
+
+      <p>
+        Revoluciona los espacios públicos con tecnología inteligente,
+        monitoreo en tiempo real e iluminación automatizada diseñada
+        para mejorar la seguridad urbana y reducir el consumo energético.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn btn-primary">
+          Solicitar Cotización
+        </a>
+
+        <a href="#funciona" class="btn btn-secondary">
+          Ver Demo
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-image fade-up">
+      <img
+        src="https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=80&w=1200&auto=format&fit=crop"
+        alt="Luminaria Inteligente"
+      />
+    </div>
+
+  </section>
+
+  <!-- STATS -->
+  <section style="padding-top:0;">
+    <div class="stats">
+
+      <div class="stat-card fade-up">
+        <h2 class="counter" data-target="60">0</h2>
+        <p>% ahorro energético</p>
+      </div>
+
+      <div class="stat-card fade-up">
+        <h2 class="counter" data-target="24">0</h2>
+        <p>Horas monitoreo</p>
+      </div>
+
+      <div class="stat-card fade-up">
+        <h2 class="counter" data-target="95">0</h2>
+        <p>% eficiencia urbana</p>
+      </div>
+
+      <div class="stat-card fade-up">
+        <h2 class="counter" data-target="100">0</h2>
+        <p>% automatización</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROBLEMAS -->
+  <section id="problemas">
+
+    <h2 class="section-title fade-up">
+      Problemas que Resuelve
+    </h2>
+
+    <p class="section-subtitle fade-up">
+      ILUMINA+ Smart Light combate los principales desafíos urbanos
+      mediante automatización, inteligencia artificial y monitoreo avanzado.
+    </p>
+
+    <div class="grid">
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-lightbulb"></i>
+        <h3>Baja Iluminación</h3>
+        <p>
+          Incrementa la visibilidad en calles, plazas y espacios públicos.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>Inseguridad Urbana</h3>
+        <p>
+          Mayor iluminación y monitoreo inteligente para zonas críticas.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-bolt"></i>
+        <h3>Alto Consumo</h3>
+        <p>
+          Optimización energética mediante sensores inteligentes.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <h3>Fallas Difíciles</h3>
+        <p>
+          Detección automática y alertas en tiempo real.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <h3>Mantenimiento Costoso</h3>
+        <p>
+          Gestión eficiente y reducción de intervenciones manuales.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FUNCIONA -->
+  <section id="funciona">
+
+    <h2 class="section-title fade-up">
+      Cómo Funciona
+    </h2>
+
+    <p class="section-subtitle fade-up">
+      Tecnología inteligente conectada para una gestión urbana moderna.
+    </p>
+
+    <div class="grid">
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-microchip"></i>
+        <h3>Sensores Inteligentes</h3>
+        <p>
+          Detectan movimiento, luminosidad y actividad urbana.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-sun"></i>
+        <h3>Iluminación Automática</h3>
+        <p>
+          Ajuste inteligente según horario y flujo de personas.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Monitoreo 24/7</h3>
+        <p>
+          Supervisión permanente desde cualquier dispositivo.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-brain"></i>
+        <h3>Inteligencia Artificial</h3>
+        <p>
+          Predicción de fallas y optimización energética avanzada.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-mobile-screen"></i>
+        <h3>Panel Web y Móvil</h3>
+        <p>
+          Control total desde una interfaz intuitiva y moderna.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section id="beneficios">
+
+    <h2 class="section-title fade-up">
+      Beneficios Esperados
+    </h2>
+
+    <p class="section-subtitle fade-up">
+      Soluciones inteligentes enfocadas en seguridad, eficiencia y sostenibilidad.
+    </p>
+
+    <div class="grid">
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-leaf"></i>
+        <h3>Menor Consumo</h3>
+        <p>
+          Reducción significativa del gasto energético urbano.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-city"></i>
+        <h3>Mayor Seguridad</h3>
+        <p>
+          Ambientes iluminados que generan tranquilidad ciudadana.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-earth-americas"></i>
+        <h3>Menor Contaminación</h3>
+        <p>
+          Tecnología eficiente y amigable con el medio ambiente.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-clock"></i>
+        <h3>Respuesta Rápida</h3>
+        <p>
+          Alertas automáticas para atención inmediata de incidentes.
+        </p>
+      </div>
+
+      <div class="card fade-up">
+        <i class="fa-solid fa-network-wired"></i>
+        <h3>Gestión Urbana</h3>
+        <p>
+          Centralización de datos y administración eficiente.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section>
+
+    <h2 class="section-title fade-up">
+      Proceso de Contratación
+    </h2>
+
+    <p class="section-subtitle fade-up">
+      Implementación rápida y acompañamiento técnico especializado.
+    </p>
+
+    <div class="process">
+
+      <div class="process-step fade-up">
+        <span>1</span>
+        <h3>Solicitud</h3>
+      </div>
+
+      <div class="process-step fade-up">
+        <span>2</span>
+        <h3>Contacto</h3>
+      </div>
+
+      <div class="process-step fade-up">
+        <span>3</span>
+        <h3>Asignación Técnica</h3>
+      </div>
+
+      <div class="process-step fade-up">
+        <span>4</span>
+        <h3>Seguimiento</h3>
+      </div>
+
+      <div class="process-step fade-up">
+        <span>5</span>
+        <h3>Instalación Finalizada</h3>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios">
+
+    <h2 class="section-title fade-up">
+      Lo Que Dicen Nuestros Clientes
+    </h2>
+
+    <p class="section-subtitle fade-up">
+      Instituciones y organizaciones ya están modernizando sus espacios con ILUMINA+.
+    </p>
+
+    <div class="testimonial-container">
+
+      <div class="testimonial fade-up">
+        <p>
+          “La implementación de ILUMINA+ redujo considerablemente
+          los costos energéticos y mejoró la percepción de seguridad
+          en nuestra comuna.”
+        </p>
+
+        <h4>Municipalidad de Santiago</h4>
+      </div>
+
+      <div class="testimonial fade-up">
+        <p>
+          “El monitoreo en tiempo real nos permitió detectar fallas
+          inmediatamente y optimizar recursos técnicos.”
+        </p>
+
+        <h4>Smart City Solutions</h4>
+      </div>
+
+      <div class="testimonial fade-up">
+        <p>
+          “Una solución moderna, eficiente y con excelente soporte técnico.
+          Ideal para proyectos urbanos inteligentes.”
+        </p>
+
+        <h4>Infraestructura Urbana Chile</h4>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+
+    <div class="contact-wrapper">
+
+      <div class="contact-info fade-up">
+
+        <h2>
+          Solicita una Cotización
+        </h2>
+
+        <p>
+          Nuestro equipo está listo para ayudarte a transformar
+          espacios públicos mediante tecnología inteligente y soluciones
+          de iluminación avanzada.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#" class="btn btn-primary">
+            Hablar con un Asesor
+          </a>
+        </div>
+
+      </div>
+
+      <form class="fade-up">
+
+        <div class="input-group">
+          <input type="text" placeholder="Nombre" required>
+        </div>
+
+        <div class="input-group">
+          <input type="text" placeholder="Empresa / Municipalidad" required>
+        </div>
+
+        <div class="input-group">
+          <input type="email" placeholder="Correo Electrónico" required>
+        </div>
+
+        <div class="input-group">
+          <input type="tel" placeholder="Teléfono" required>
+        </div>
+
+        <div class="input-group">
+          <textarea placeholder="Mensaje"></textarea>
+        </div>
+
+        <button class="btn btn-primary" type="submit">
+          Enviar Solicitud
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-content">
+
+      <div>
+        <h3>ILUMINA+ Smart Light</h3>
+        <p style="color: var(--text); margin-top:10px;">
+          Tecnología inteligente para ciudades modernas.
+        </p>
+      </div>
+
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+      </div>
+
+      <div>
+        <p style="color:var(--text);">
+          contacto@iluminaplus.cl
+        </p>
+
+        <p style="color:var(--text);">
+          © 2026 ILUMINA+ Smart Light
+        </p>
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+
+    // SCROLL ANIMATION
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add("active");
+        }
+      });
+    });
+
+    document.querySelectorAll(".fade-up").forEach((el)=>{
+      observer.observe(el);
+    });
+
+    // COUNTER ANIMATION
+
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+
+      counter.innerText = '0';
+
+      const updateCounter = () => {
+
+        const target = +counter.getAttribute('data-target');
+        const c = +counter.innerText;
+
+        const increment = target / 80;
+
+        if(c < target){
+          counter.innerText = `${Math.ceil(c + increment)}`;
+          setTimeout(updateCounter, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+
+      updateCounter();
+    });
+
+  </script>
+
+</body>
+</html>
+```
